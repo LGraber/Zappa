@@ -859,6 +859,7 @@ class ZappaCLI(object):
             except Exception as e:
                 click.echo(click.style("Warning!", fg="red") + " Couldn't get function " + self.lambda_name +
                            " in " + self.zappa.aws_region + " - have you deployed yet?")
+                click.echo(click.style("Error ", fg="red") + e)
                 sys.exit(-1)
 
             if last_updated_unix <= updated_time:
